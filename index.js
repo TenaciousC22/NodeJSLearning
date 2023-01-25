@@ -1,8 +1,3 @@
-const {EventEmitter} = require('events');
-const eventEmitter = new EventEmitter();
+const myModule=require('./myModule');
 
-eventEmitter.on('lunch', () =>{
-    console.log('Yum!')
-})
-
-eventEmitter.emit("lunch");
+console.log(myModule);
