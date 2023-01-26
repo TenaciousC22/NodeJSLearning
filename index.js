@@ -1,3 +1,11 @@
-const myModule=require('./myModule');
+const { response } = require('express');
+const express = require('express');
+const { readFile } = require('fs').promises;
 
-console.log(myModule);
+const app = express();
+
+app.get("/", async (request, response)=> {
+    response.send(await readFile('./home.html','utf-8'));
+});
+
+app.listen(process.env.PORT||3000,()=>console.log('App availible on http://localhost:3000'))
